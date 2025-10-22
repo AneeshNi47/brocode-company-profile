@@ -825,19 +825,21 @@ export const BrocodeSolutionsProfile = ({
             <div className="flex" data-magicpath-id="151" data-magicpath-path="BrocodeSolutionsProfile.tsx">
               {[...projects, ...projects].map((proj, idx) => <div key={`${proj.client}-${idx}`} className="min-w-0 shrink-0 grow-0 basis-[90%] sm:basis-[65%] md:basis-[50%] lg:basis-[38%] xl:basis-[32%] pr-6" data-magicpath-id="152" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                   <motion.div whileHover={{
-                y: -8
-              }} className="group h-full rounded-2xl border border-cyan-500/20 bg-slate-900/40 backdrop-blur-xl p-8 relative overflow-hidden min-h-[180px]" data-magicpath-id="153" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                y: -8,
+                scale: 1.02
+              }} className="group h-full rounded-2xl border border-cyan-500/20 bg-slate-900/40 backdrop-blur-xl p-8 relative overflow-hidden min-h-[240px] flex flex-col items-center text-center" data-magicpath-id="153" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/5 group-hover:to-purple-500/5 transition-all duration-500" data-magicpath-id="154" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                    <div className="absolute -top-16 -right-16 size-40 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-all duration-500" data-magicpath-id="155" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
                     
-                    <div className="relative z-10 space-y-5" data-magicpath-id="155" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                      <div className="flex items-start gap-4" data-magicpath-id="156" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                        <ProjectLogo name={proj.client} data-magicpath-id="157" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                        <div className="flex-1 pt-1" data-magicpath-id="158" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                          <h4 className="text-lg md:text-xl font-bold text-white leading-tight mb-2" data-magicpath-id="159" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.title}</h4>
-                          <p className="text-sm text-slate-400" data-magicpath-id="160" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.client}</p>
-                        </div>
+                    <div className="relative z-10 flex flex-col items-center space-y-5 flex-1 justify-center" data-magicpath-id="156" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                      <ProjectLogo name={proj.client} data-magicpath-id="157" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                      
+                      <div className="space-y-3" data-magicpath-id="158" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                        <h4 className="text-lg md:text-xl font-bold text-white leading-tight" data-magicpath-id="159" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.title}</h4>
+                        <p className="text-sm text-slate-400" data-magicpath-id="160" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.client}</p>
                       </div>
-                      <div className="flex items-center gap-2 text-sm" data-magicpath-id="161" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                      
+                      <div className="flex items-center gap-2 text-sm pt-2" data-magicpath-id="161" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                         <span className="size-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400" data-magicpath-id="162" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
                         <span className="text-cyan-400" data-magicpath-id="163" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.industry}</span>
                       </div>
