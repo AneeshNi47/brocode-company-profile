@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { Globe2, CheckCircle2, BadgeCheck, Phone, Mail, Globe, Building2, Factory, Wrench, Truck, ShoppingCart, ChefHat, Wheat, FlaskConical, Pill, HeartPulse, Cpu, Radio, Clapperboard, Banknote, Building, Plane, GraduationCap, Shield, HandHeart, Cloud, Smartphone, Layout, Settings, Rocket, Sparkles, Zap, TrendingUp, Users, Award, Target, Briefcase, MapPin } from 'lucide-react';
+import { Globe2, CheckCircle2, BadgeCheck, Phone, Mail, Globe, Building2, Factory, Wrench, Truck, ShoppingCart, ChefHat, Wheat, FlaskConical, Pill, HeartPulse, Cpu, Radio, Clapperboard, Banknote, Building, Plane, GraduationCap, Shield, HandHeart, Cloud, Smartphone, Layout, Settings, Rocket, Sparkles, Zap, TrendingUp, Users, Award, Target, Briefcase, MapPin, ArrowRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 type BrocodeSolutionsProfileProps = {
   className?: string;
@@ -11,31 +11,45 @@ type BrocodeSolutionsProfileProps = {
 const services = [{
   title: 'ERPNext Implementation',
   description: 'Seamless integration to streamline and unify your operations.',
-  icon: Settings
+  details: 'End-to-end deployment with minimal disruption, data migration, and comprehensive user training.',
+  icon: Settings,
+  gradient: 'from-cyan-500 to-blue-500'
 }, {
   title: 'ERPNext Customization',
   description: 'Tailored modules and workflows aligned to your business.',
-  icon: Wrench
+  details: 'Custom fields, forms, reports, and workflows designed specifically for your unique requirements.',
+  icon: Wrench,
+  gradient: 'from-purple-500 to-pink-500'
 }, {
   title: 'ERPNext Support',
   description: 'Responsive maintenance and performance optimization.',
-  icon: CheckCircle2
+  details: '24/7 technical support, system upgrades, bug fixes, and continuous performance monitoring.',
+  icon: CheckCircle2,
+  gradient: 'from-blue-500 to-indigo-500'
 }, {
   title: 'Mobile App Development',
   description: 'Intuitive mobile experiences that engage your users.',
-  icon: Smartphone
+  details: 'Native iOS and Android apps with seamless ERP integration and offline capabilities.',
+  icon: Smartphone,
+  gradient: 'from-green-500 to-emerald-500'
 }, {
   title: 'Website Development',
   description: 'High-performance, robust websites for your brand.',
-  icon: Layout
+  details: 'Modern, responsive websites with CMS integration, SEO optimization, and e-commerce capabilities.',
+  icon: Layout,
+  gradient: 'from-orange-500 to-red-500'
 }, {
   title: 'Digital Marketing',
   description: 'End-to-end strategies to boost visibility and growth.',
-  icon: Rocket
+  details: 'SEO, social media marketing, content strategy, and data-driven campaign management.',
+  icon: Rocket,
+  gradient: 'from-pink-500 to-rose-500'
 }, {
   title: 'Cloud Solutions',
   description: 'Secure, scalable infrastructure and collaboration.',
-  icon: Cloud
+  details: 'Cloud migration, hosting, DevOps automation, and enterprise-grade security solutions.',
+  icon: Cloud,
+  gradient: 'from-teal-500 to-cyan-500'
 }];
 const projects = [{
   client: 'Al Noor Foods',
@@ -353,11 +367,6 @@ const ProjectLogo = ({
 export const BrocodeSolutionsProfile = ({
   className
 }: BrocodeSolutionsProfileProps) => {
-  const [servicesRef, servicesEmbla] = useEmblaCarousel({
-    align: 'start',
-    loop: true,
-    dragFree: true
-  });
   const [projectsRef, projectsEmbla] = useEmblaCarousel({
     align: 'start',
     loop: true,
@@ -367,7 +376,6 @@ export const BrocodeSolutionsProfile = ({
     scrollYProgress
   } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.3]);
-  useAutoScrollEmbla(servicesEmbla, 'rtl', 2200);
   useAutoScrollEmbla(projectsEmbla, 'ltr', 2600);
   return <div className={cn('w-full min-h-dvh bg-slate-950 text-foreground relative overflow-hidden', className)} data-magicpath-id="24" data-magicpath-path="BrocodeSolutionsProfile.tsx">
       <AnimatedGrid data-magicpath-id="25" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
@@ -703,61 +711,117 @@ export const BrocodeSolutionsProfile = ({
         </div>
       </Section>
 
-      {/* Services Carousel */}
+      {/* Services Section - Redesigned with Large Grid Cards */}
       <Section title="Our Services" subtitle="Comprehensive solutions powered by cutting-edge technology" icon={Settings} className="mt-16 md:mt-24" data-magicpath-id="124" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-        <div className="relative" data-magicpath-id="125" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-          <div className="overflow-hidden" ref={servicesRef} data-magicpath-id="126" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-            <div className="flex" data-magicpath-id="127" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-              {[...services, ...services].map((svc, idx) => {
-              const Icon = svc.icon;
-              return <div key={`${svc.title}-${idx}`} className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[33%] xl:basis-[28%] pr-4" data-magicpath-id="128" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                    <motion.div whileHover={{
-                  y: -10,
-                  scale: 1.02
-                }} className="group h-full rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-xl p-6 overflow-hidden relative" data-magicpath-id="129" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500" data-magicpath-id="130" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                      <div className="absolute -top-8 -right-8 size-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500" data-magicpath-id="131" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                      
-                      <div className="relative z-10 space-y-4" data-magicpath-id="132" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                        <div className="flex items-start justify-between" data-magicpath-id="133" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                          <div className="inline-flex items-center justify-center size-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30" data-magicpath-id="134" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                            <Icon className="size-6 text-cyan-400" data-magicpath-id="135" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                          </div>
-                          <Sparkles className="size-5 text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                        <h3 className="text-lg font-bold text-white leading-tight" data-magicpath-id="136" data-magicpath-path="BrocodeSolutionsProfile.tsx">{svc.title}</h3>
-                        <p className="text-sm text-slate-400 leading-relaxed" data-magicpath-id="137" data-magicpath-path="BrocodeSolutionsProfile.tsx">{svc.description}</p>
-                      </div>
-                    </motion.div>
-                  </div>;
-            })}
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-magicpath-id="125" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+          {services.map((svc, idx) => {
+          const Icon = svc.icon;
+          return <motion.div key={svc.title} initial={{
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true,
+            amount: 0.2
+          }} transition={{
+            delay: idx * 0.1,
+            duration: 0.6
+          }} whileHover={{
+            y: -12,
+            scale: 1.03
+          }} className="group relative rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-slate-900/60 to-slate-800/40 backdrop-blur-xl p-8 md:p-10 overflow-hidden min-h-[400px] flex flex-col" data-magicpath-id="126" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                {/* Animated Background */}
+                <div className={cn("absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br", svc.gradient)} data-magicpath-id="127" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                <div className="absolute -top-16 -right-16 size-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" data-magicpath-id="128" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                <div className="absolute -bottom-16 -left-16 size-48 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-all duration-500" data-magicpath-id="129" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                
+                <div className="relative z-10 flex flex-col flex-1" data-magicpath-id="130" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                  {/* Icon */}
+                  <motion.div whileHover={{
+                rotate: 360,
+                scale: 1.1
+              }} transition={{
+                duration: 0.6
+              }} className={cn("inline-flex items-center justify-center size-20 rounded-2xl bg-gradient-to-br border-2 mb-6", `${svc.gradient} border-cyan-500/30`)} data-magicpath-id="131" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                    <Icon className="size-10 text-white" data-magicpath-id="132" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                  </motion.div>
+                  
+                  {/* Content */}
+                  <div className="flex-1 space-y-4" data-magicpath-id="133" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight" data-magicpath-id="134" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                      {svc.title}
+                    </h3>
+                    <p className="text-base md:text-lg text-cyan-400 font-medium leading-relaxed" data-magicpath-id="135" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                      {svc.description}
+                    </p>
+                    <p className="text-sm text-slate-400 leading-relaxed" data-magicpath-id="136" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                      {svc.details}
+                    </p>
+                  </div>
+                  
+                  {/* CTA */}
+                  <motion.div className="flex items-center gap-2 text-sm font-semibold text-cyan-400 mt-6 opacity-0 group-hover:opacity-100 transition-opacity" whileHover={{
+                x: 5
+              }} data-magicpath-id="137" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                    <span data-magicpath-id="138" data-magicpath-path="BrocodeSolutionsProfile.tsx">Learn More</span>
+                    <ArrowRight className="size-4" data-magicpath-id="139" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                  </motion.div>
+                </div>
+              </motion.div>;
+        })}
         </div>
+
+        {/* Call to Action */}
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6,
+        delay: 0.5
+      }} className="mt-12 text-center" data-magicpath-id="140" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+          <motion.button whileHover={{
+          scale: 1.05
+        }} whileTap={{
+          scale: 0.95
+        }} className="px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white text-lg font-bold shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all" data-magicpath-id="141" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+            <span className="flex items-center gap-3" data-magicpath-id="142" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              <Rocket className="size-6" data-magicpath-id="143" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+              <span data-magicpath-id="144" data-magicpath-path="BrocodeSolutionsProfile.tsx">Start Your Digital Transformation</span>
+              <ArrowRight className="size-6" data-magicpath-id="145" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+            </span>
+          </motion.button>
+        </motion.div>
       </Section>
 
       {/* Key Projects Carousel */}
-      <Section title="Key Projects" subtitle="Transformative partnerships across industries" icon={BadgeCheck} className="mt-16 md:mt-24" data-magicpath-id="138" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-        <div className="relative" data-magicpath-id="139" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-          <div className="overflow-hidden" ref={projectsRef} data-magicpath-id="140" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-            <div className="flex" data-magicpath-id="141" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-              {[...projects, ...projects].map((proj, idx) => <div key={`${proj.client}-${idx}`} className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[55%] md:basis-[45%] lg:basis-[30%] xl:basis-[24%] pr-4" data-magicpath-id="142" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+      <Section title="Key Projects" subtitle="Transformative partnerships across industries" icon={BadgeCheck} className="mt-16 md:mt-24" data-magicpath-id="146" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+        <div className="relative" data-magicpath-id="147" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+          <div className="overflow-hidden" ref={projectsRef} data-magicpath-id="148" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+            <div className="flex" data-magicpath-id="149" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              {[...projects, ...projects].map((proj, idx) => <div key={`${proj.client}-${idx}`} className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[55%] md:basis-[45%] lg:basis-[30%] xl:basis-[24%] pr-4" data-magicpath-id="150" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                   <motion.div whileHover={{
                 y: -8
-              }} className="group h-full rounded-2xl border border-cyan-500/20 bg-slate-900/40 backdrop-blur-xl p-6 relative overflow-hidden" data-magicpath-id="143" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/5 group-hover:to-purple-500/5 transition-all duration-500" data-magicpath-id="144" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+              }} className="group h-full rounded-2xl border border-cyan-500/20 bg-slate-900/40 backdrop-blur-xl p-6 relative overflow-hidden" data-magicpath-id="151" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/5 group-hover:to-purple-500/5 transition-all duration-500" data-magicpath-id="152" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
                     
-                    <div className="relative z-10 space-y-4" data-magicpath-id="145" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                      <div className="flex items-center gap-3" data-magicpath-id="146" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                        <ProjectLogo name={proj.client} data-magicpath-id="147" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                        <div className="flex-1" data-magicpath-id="148" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                          <h4 className="text-base font-bold text-white leading-tight" data-magicpath-id="149" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.title}</h4>
-                          <p className="text-xs text-slate-400 mt-1" data-magicpath-id="150" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.client}</p>
+                    <div className="relative z-10 space-y-4" data-magicpath-id="153" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                      <div className="flex items-center gap-3" data-magicpath-id="154" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                        <ProjectLogo name={proj.client} data-magicpath-id="155" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                        <div className="flex-1" data-magicpath-id="156" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                          <h4 className="text-base font-bold text-white leading-tight" data-magicpath-id="157" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.title}</h4>
+                          <p className="text-xs text-slate-400 mt-1" data-magicpath-id="158" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.client}</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-xs" data-magicpath-id="151" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                        <span className="size-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400" data-magicpath-id="152" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                        <span className="text-cyan-400" data-magicpath-id="153" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.industry}</span>
+                      <div className="flex items-center gap-2 text-xs" data-magicpath-id="159" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                        <span className="size-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400" data-magicpath-id="160" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                        <span className="text-cyan-400" data-magicpath-id="161" data-magicpath-path="BrocodeSolutionsProfile.tsx">{proj.industry}</span>
                       </div>
                     </div>
                   </motion.div>
@@ -768,8 +832,8 @@ export const BrocodeSolutionsProfile = ({
       </Section>
 
       {/* ERPNext Modules */}
-      <Section title="ERPNext Modules" subtitle="Comprehensive business solutions from core to vertical" icon={Settings} className="mt-16 md:mt-24" data-magicpath-id="154" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-magicpath-id="155" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+      <Section title="ERPNext Modules" subtitle="Comprehensive business solutions from core to vertical" icon={Settings} className="mt-16 md:mt-24" data-magicpath-id="162" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-magicpath-id="163" data-magicpath-path="BrocodeSolutionsProfile.tsx">
           {erpModules.map((m, idx) => <motion.div key={m.title} initial={{
           opacity: 0,
           y: 20
@@ -784,19 +848,19 @@ export const BrocodeSolutionsProfile = ({
         }} whileHover={{
           scale: 1.03,
           y: -5
-        }} className="group rounded-2xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-xl p-6 relative overflow-hidden" data-magicpath-id="156" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/5 group-hover:to-purple-500/5 transition-all duration-500" data-magicpath-id="157" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-              <div className="relative z-10" data-magicpath-id="158" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                <h4 className="text-base md:text-lg font-bold text-white mb-2" data-magicpath-id="159" data-magicpath-path="BrocodeSolutionsProfile.tsx">{m.title}</h4>
-                <p className="text-sm text-slate-400 leading-relaxed" data-magicpath-id="160" data-magicpath-path="BrocodeSolutionsProfile.tsx">{m.description}</p>
+        }} className="group rounded-2xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-xl p-6 relative overflow-hidden" data-magicpath-id="164" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/5 group-hover:to-purple-500/5 transition-all duration-500" data-magicpath-id="165" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+              <div className="relative z-10" data-magicpath-id="166" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                <h4 className="text-base md:text-lg font-bold text-white mb-2" data-magicpath-id="167" data-magicpath-path="BrocodeSolutionsProfile.tsx">{m.title}</h4>
+                <p className="text-sm text-slate-400 leading-relaxed" data-magicpath-id="168" data-magicpath-path="BrocodeSolutionsProfile.tsx">{m.description}</p>
               </div>
             </motion.div>)}
         </div>
       </Section>
 
       {/* Industries */}
-      <Section title="Industries We Serve" subtitle="Deep expertise across diverse sectors" icon={Factory} className="mt-16 md:mt-24" data-magicpath-id="161" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3" data-magicpath-id="162" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+      <Section title="Industries We Serve" subtitle="Deep expertise across diverse sectors" icon={Factory} className="mt-16 md:mt-24" data-magicpath-id="169" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3" data-magicpath-id="170" data-magicpath-path="BrocodeSolutionsProfile.tsx">
           {industries.map((ind, idx) => {
           const Icon = ind.icon;
           return <motion.div key={ind.name} initial={{
@@ -813,19 +877,19 @@ export const BrocodeSolutionsProfile = ({
           }} whileHover={{
             scale: 1.05,
             x: 5
-          }} className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm p-4 hover:bg-slate-900/50 transition-all" data-magicpath-id="163" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                <span className="inline-flex items-center justify-center size-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30" data-magicpath-id="164" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                  <Icon className="size-5 text-cyan-400" data-magicpath-id="165" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+          }} className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm p-4 hover:bg-slate-900/50 transition-all" data-magicpath-id="171" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                <span className="inline-flex items-center justify-center size-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30" data-magicpath-id="172" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                  <Icon className="size-5 text-cyan-400" data-magicpath-id="173" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
                 </span>
-                <span className="text-sm font-medium text-slate-200" data-magicpath-id="166" data-magicpath-path="BrocodeSolutionsProfile.tsx">{ind.name}</span>
+                <span className="text-sm font-medium text-slate-200" data-magicpath-id="174" data-magicpath-path="BrocodeSolutionsProfile.tsx">{ind.name}</span>
               </motion.div>;
         })}
         </div>
       </Section>
 
       {/* Engagement Models */}
-      <Section title="Engagement Models" subtitle="Flexible approaches tailored to your needs" icon={HandHeart} className="mt-16 md:mt-24" data-magicpath-id="167" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-magicpath-id="168" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+      <Section title="Engagement Models" subtitle="Flexible approaches tailored to your needs" icon={HandHeart} className="mt-16 md:mt-24" data-magicpath-id="175" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-magicpath-id="176" data-magicpath-path="BrocodeSolutionsProfile.tsx">
           {[{
           title: 'Fixed Cost',
           description: 'Ideal for well-defined requirements. Enjoy budget predictability with a fixed price and clear milestones.',
@@ -854,16 +918,16 @@ export const BrocodeSolutionsProfile = ({
           }} whileHover={{
             y: -10,
             scale: 1.02
-          }} className="group relative rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-xl p-8 overflow-hidden" data-magicpath-id="169" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500" data-magicpath-id="170" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                <div className="absolute -top-12 -right-12 size-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" data-magicpath-id="171" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+          }} className="group relative rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-slate-900/50 to-slate-800/30 backdrop-blur-xl p-8 overflow-hidden" data-magicpath-id="177" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500" data-magicpath-id="178" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                <div className="absolute -top-12 -right-12 size-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" data-magicpath-id="179" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
                 
-                <div className="relative z-10 space-y-4" data-magicpath-id="172" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                  <div className="inline-flex items-center justify-center size-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30" data-magicpath-id="173" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                    <Icon className="size-7 text-cyan-400" data-magicpath-id="174" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                <div className="relative z-10 space-y-4" data-magicpath-id="180" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                  <div className="inline-flex items-center justify-center size-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30" data-magicpath-id="181" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                    <Icon className="size-7 text-cyan-400" data-magicpath-id="182" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
                   </div>
-                  <h4 className="text-xl font-bold text-white" data-magicpath-id="175" data-magicpath-path="BrocodeSolutionsProfile.tsx">{model.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed" data-magicpath-id="176" data-magicpath-path="BrocodeSolutionsProfile.tsx">{model.description}</p>
+                  <h4 className="text-xl font-bold text-white" data-magicpath-id="183" data-magicpath-path="BrocodeSolutionsProfile.tsx">{model.title}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed" data-magicpath-id="184" data-magicpath-path="BrocodeSolutionsProfile.tsx">{model.description}</p>
                 </div>
               </motion.div>;
         })}
@@ -871,68 +935,68 @@ export const BrocodeSolutionsProfile = ({
       </Section>
 
       {/* Footer */}
-      <footer className="mt-24 md:mt-32 border-t border-cyan-500/20 relative overflow-hidden" data-magicpath-id="177" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-        <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-transparent to-transparent pointer-events-none" data-magicpath-id="178" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+      <footer className="mt-24 md:mt-32 border-t border-cyan-500/20 relative overflow-hidden" data-magicpath-id="185" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+        <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-transparent to-transparent pointer-events-none" data-magicpath-id="186" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
         
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16 relative z-10" data-magicpath-id="179" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start" data-magicpath-id="180" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-            <div className="md:col-span-2 space-y-4" data-magicpath-id="181" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent" data-magicpath-id="182" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16 relative z-10" data-magicpath-id="187" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start" data-magicpath-id="188" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+            <div className="md:col-span-2 space-y-4" data-magicpath-id="189" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent" data-magicpath-id="190" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                 Thank You for Considering Brocode Solutions!
               </h3>
-              <p className="text-sm md:text-base text-slate-400 leading-relaxed" data-magicpath-id="183" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              <p className="text-sm md:text-base text-slate-400 leading-relaxed" data-magicpath-id="191" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                 We're excited to partner with you to deliver outcomes that matter—faster, smarter and at scale. Let's build the future together.
               </p>
             </div>
 
-            <div className="space-y-4" data-magicpath-id="184" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-              <div className="text-sm" data-magicpath-id="185" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                <p className="font-semibold text-cyan-400 mb-2" data-magicpath-id="186" data-magicpath-path="BrocodeSolutionsProfile.tsx">Address</p>
-                <p className="text-slate-400 leading-relaxed" data-magicpath-id="187" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+            <div className="space-y-4" data-magicpath-id="192" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              <div className="text-sm" data-magicpath-id="193" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                <p className="font-semibold text-cyan-400 mb-2" data-magicpath-id="194" data-magicpath-path="BrocodeSolutionsProfile.tsx">Address</p>
+                <p className="text-slate-400 leading-relaxed" data-magicpath-id="195" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                   2FDBC0036, Compass Building, Al Shohada Road, Al Hamra Industrial Zone-FZ, Ras Al Khaimah, UAE
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-2" data-magicpath-id="188" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              <div className="grid grid-cols-1 gap-2" data-magicpath-id="196" data-magicpath-path="BrocodeSolutionsProfile.tsx">
                 <motion.a whileHover={{
                 scale: 1.02,
                 x: 5
-              }} href="tel:+971507612213" className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm px-4 py-3 text-sm hover:bg-slate-900/50 transition-all" data-magicpath-id="189" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                  <Phone className="size-4 text-cyan-400" data-magicpath-id="190" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                  <span className="text-slate-300" data-magicpath-id="191" data-magicpath-path="BrocodeSolutionsProfile.tsx">+971 507612213</span>
+              }} href="tel:+971507612213" className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm px-4 py-3 text-sm hover:bg-slate-900/50 transition-all" data-magicpath-id="197" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                  <Phone className="size-4 text-cyan-400" data-magicpath-id="198" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                  <span className="text-slate-300" data-magicpath-id="199" data-magicpath-path="BrocodeSolutionsProfile.tsx">+971 507612213</span>
                 </motion.a>
 
                 <motion.a whileHover={{
                 scale: 1.02,
                 x: 5
-              }} href="mailto:hello@brocodesolutions.com" className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm px-4 py-3 text-sm hover:bg-slate-900/50 transition-all" data-magicpath-id="192" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                  <Mail className="size-4 text-cyan-400" data-magicpath-id="193" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                  <span className="text-slate-300" data-magicpath-id="194" data-magicpath-path="BrocodeSolutionsProfile.tsx">hello@brocodesolutions.com</span>
+              }} href="mailto:hello@brocodesolutions.com" className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm px-4 py-3 text-sm hover:bg-slate-900/50 transition-all" data-magicpath-id="200" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                  <Mail className="size-4 text-cyan-400" data-magicpath-id="201" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                  <span className="text-slate-300" data-magicpath-id="202" data-magicpath-path="BrocodeSolutionsProfile.tsx">hello@brocodesolutions.com</span>
                 </motion.a>
 
                 <motion.a whileHover={{
                 scale: 1.02,
                 x: 5
-              }} href="http://brocodesolutions.com" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm px-4 py-3 text-sm hover:bg-slate-900/50 transition-all" data-magicpath-id="195" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                  <Globe className="size-4 text-cyan-400" data-magicpath-id="196" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                  <span className="text-slate-300" data-magicpath-id="197" data-magicpath-path="BrocodeSolutionsProfile.tsx">brocodesolutions.com</span>
+              }} href="http://brocodesolutions.com" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-sm px-4 py-3 text-sm hover:bg-slate-900/50 transition-all" data-magicpath-id="203" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                  <Globe className="size-4 text-cyan-400" data-magicpath-id="204" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                  <span className="text-slate-300" data-magicpath-id="205" data-magicpath-path="BrocodeSolutionsProfile.tsx">brocodesolutions.com</span>
                 </motion.a>
 
-                <div className="flex items-center gap-3 rounded-xl border border-purple-500/20 bg-gradient-to-r from-purple-900/20 to-pink-900/20 backdrop-blur-sm px-4 py-3 text-sm" data-magicpath-id="198" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-                  <BadgeCheck className="size-4 text-purple-400" data-magicpath-id="199" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-                  <span className="text-slate-300 font-medium" data-magicpath-id="200" data-magicpath-path="BrocodeSolutionsProfile.tsx">Frappe & ERPNext Partner</span>
+                <div className="flex items-center gap-3 rounded-xl border border-purple-500/20 bg-gradient-to-r from-purple-900/20 to-pink-900/20 backdrop-blur-sm px-4 py-3 text-sm" data-magicpath-id="206" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+                  <BadgeCheck className="size-4 text-purple-400" data-magicpath-id="207" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+                  <span className="text-slate-300 font-medium" data-magicpath-id="208" data-magicpath-path="BrocodeSolutionsProfile.tsx">Frappe & ERPNext Partner</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-cyan-500/10 flex flex-col md:flex-row items-center justify-between gap-4" data-magicpath-id="201" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-            <p className="text-xs text-slate-500" data-magicpath-id="202" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+          <div className="mt-12 pt-8 border-t border-cyan-500/10 flex flex-col md:flex-row items-center justify-between gap-4" data-magicpath-id="209" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+            <p className="text-xs text-slate-500" data-magicpath-id="210" data-magicpath-path="BrocodeSolutionsProfile.tsx">
               © {new Date().getFullYear()} Brocode Solutions. All rights reserved.
             </p>
-            <div className="flex items-center gap-2" data-magicpath-id="203" data-magicpath-path="BrocodeSolutionsProfile.tsx">
-              <span className="size-2 rounded-full bg-green-400 animate-pulse" data-magicpath-id="204" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
-              <span className="text-xs text-slate-500" data-magicpath-id="205" data-magicpath-path="BrocodeSolutionsProfile.tsx">Systems operational</span>
+            <div className="flex items-center gap-2" data-magicpath-id="211" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+              <span className="size-2 rounded-full bg-green-400 animate-pulse" data-magicpath-id="212" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
+              <span className="text-xs text-slate-500" data-magicpath-id="213" data-magicpath-path="BrocodeSolutionsProfile.tsx">Systems operational</span>
             </div>
           </div>
         </div>
