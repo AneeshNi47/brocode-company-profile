@@ -764,7 +764,7 @@ export const BrocodeSolutionsProfile = ({
           scale: 1.05
         }} whileTap={{
           scale: 0.95
-        }} className="px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white text-lg font-bold shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all" data-magicpath-id="122" data-magicpath-path="BrocodeSolutionsProfile.tsx">
+        }} onClick={() => setIsModalOpen(true)} className="px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white text-lg font-bold shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all" data-magicpath-id="122" data-magicpath-path="BrocodeSolutionsProfile.tsx">
             <span className="flex items-center gap-3" data-magicpath-id="123" data-magicpath-path="BrocodeSolutionsProfile.tsx">
               <Rocket className="size-6" data-magicpath-id="124" data-magicpath-path="BrocodeSolutionsProfile.tsx" />
               <span data-magicpath-id="125" data-magicpath-path="BrocodeSolutionsProfile.tsx">Start Your Digital Transformation</span>
