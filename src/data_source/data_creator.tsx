@@ -46,34 +46,42 @@ export const services = [{
 }];
 export const projects = [{
   client: 'Al Noor Foods',
+  image_src: "./PNG/ABS.png",
   title: 'ERPNext Rollout',
   industry: 'Food & Beverage'
 }, {
   client: 'SkyTrack Logistics',
   title: 'Fleet & 3PL Suite',
+  image_src: "./PNG/ABS.png",
   industry: 'Transportation & Logistics'
 }, {
   client: 'BlueSteel Manufacturing',
+  image_src: "./PNG/ABS.png",
   title: 'MRP & QA Stack',
   industry: 'Manufacturing'
 }, {
   client: 'MedicoPlus',
+  image_src: "./PNG/ABS.png",
   title: 'Pharma Compliance',
   industry: 'Pharmaceuticals'
 }, {
   client: 'AeroTech Systems',
+  image_src: "./PNG/ABS.png",
   title: 'MRO Suite',
   industry: 'Aerospace'
 }, {
   client: 'GreenAgro',
+  image_src: "./JPEG/SBS.jpg",
   title: 'Farm-to-Shelf',
   industry: 'Agriculture'
 }, {
   client: 'UrbanBuild',
+  image_src: "./PNG/ABS.png",
   title: 'Project Control',
   industry: 'Construction & Contracting'
 }, {
   client: 'RetailHub',
+  image_src: "./PNG/ABS.png",
   title: 'Omnichannel POS',
   industry: 'Retail & eCommerce'
 }];

@@ -114,14 +114,15 @@ const StatCard = ({
     </div>
   </motion.div>;
 const ProjectLogo = ({
-  name
+  name,
+  index
 }: {
   name: string;
+  index: number
 }) => {
   const initials = name.split(' ').map(p => p[0]).slice(0, 2).join('').toUpperCase();
-  return <div aria-label={`${name} logo placeholder`} className="size-20 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 backdrop-blur-sm flex items-center justify-center font-bold text-cyan-400 text-xl">
-      {initials}
-    </div>;
+  return  <img src={name} alt={name} className="object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+  
 };
 
 // @component: BrocodeSolutionsProfile
@@ -525,7 +526,7 @@ export const BrocodeSolutionsProfile = ({
                     <div className="absolute -top-16 -right-16 size-40 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-all duration-500" />
                     
                     <div className="relative z-10 flex flex-col items-center space-y-5 flex-1 justify-center">
-                      <ProjectLogo name={proj.client} />
+                      <ProjectLogo name={proj.image_src} index={idx} />
                       
                       <div className="space-y-3">
                         <h4 className="text-lg md:text-xl font-bold text-white leading-tight">{proj.title}</h4>
